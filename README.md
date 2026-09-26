@@ -1,8 +1,6 @@
 # mpv_taxi_ny_dt
 Estudo de banco de **dados** de taxis em Nova Iorque
 
-[Link para o Databricks](https://dbc-f8382bc1-fe17.cloud.databricks.com/editor/notebooks/1522556397199899?o=7474654258377455)
-
 [Link do dataset](https://docs.databricks.com/aws/en/discover/databricks-datasets#nyctaxi)
 
 

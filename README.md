@@ -34,7 +34,7 @@ Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilid
 
 **Evidências:**
 
-![Estrutura da tabela fonte](ds_nt_taxi/o1_explorando_o_ds_estrutura_da_tabela__da_fonte.png)
+![Estrutura da tabela fonte](ds_nt_taxi/o1_explorando_o_ds_estrutura_da_tabela_da_fonte.png)
 
 ![Contagem da tabela fonte](ds_nt_taxi/o1e2_total_registros_fonte.png)
 
@@ -152,7 +152,7 @@ samples.nyctaxi.trips
 
 ![Outliers de distâncias zero ou negativas](ds_nt_taxi/o5_tabela_bronze_valores_sus_distancia_0_menos.png)
 
-![Outliers de duração zero ou negativa](images/10_qualidade_outliers.png)
+![Outliers de duração zero ou negativa](ds_nt_taxi/o7_tabela_bronze_valores_sus_durac_invalida.png)
 
 ![Outliers de valores 0 ou negativos](ds_nt_taxi/o6_tabela_bronze_valores_sus_valor_0_menos.png)
 

@@ -148,7 +148,7 @@ samples.nyctaxi.trips
 
 **Evidências:**
 
-![Verificação de nulos](images/09_qualidade_nulos.png)
+![Verificação de nulos](ds_nt_taxi/o4_tabela_bronze_aqd_valores_nulos.png)
 
 ![Outliers e valores inválidos](images/10_qualidade_outliers.png)
 

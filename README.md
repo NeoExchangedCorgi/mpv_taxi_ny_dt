@@ -180,7 +180,8 @@ Correlação de **0,9473** → relação muito forte e positiva.
 - Dia mais fraco: **Terça-feira**
 
 ![Top horários](ds_nt_taxi/o17_primeira_resposta_tabular_a_questao_3.png)  
-![Dias da semana](images/15_pergunta3_dias.png)
+![Dias da semana](ds_nt_taxi/o16_segunda_resposta_tabular_a_questao_3.png)
+![Em gráficos](ds_nt_taxi/)
 
 ### Pergunta 4 – Rotas mais frequentes e rentáveis
 As rotas mais comuns são curtas e intra-bairros de Manhattan (especialmente Upper East Side e Upper West Side).

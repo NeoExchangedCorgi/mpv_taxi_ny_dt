@@ -14,7 +14,7 @@ Pipeline de dados completo utilizando a **Arquitetura Medalhão** (Bronze → Si
 
 ## 1. Contexto de Negócios e Perguntas (Etapa 2 e 4.1)
 
-### Problema / Contexto
+### Problema
 O objetivo deste trabalho é construir um pipeline de dados na nuvem para analisar o padrão de uso e precificação das corridas de táxi em Nova York.  
 A partir dos dados disponíveis no dataset `samples.nyctaxi.trips`, buscamos identificar os principais fatores que influenciam o valor da corrida, os horários e locais de maior demanda, e possíveis problemas de qualidade nos dados.  
 
@@ -26,7 +26,7 @@ Os insights gerados podem apoiar decisões de otimização de frota, precificaç
 - **Conteúdo:** Registros de corridas de táxi amarelo (Yellow Cab) de Nova York, contendo data/hora de embarque e desembarque, distância, valor da corrida e CEPs de origem/destino.
 - **Volume:** 21.932 registros | 6 colunas originais
 
-### Perguntas de Negócio
+### Perguntas
 1. Qual é a distribuição do valor da corrida e da distância? Existem outliers significativos?
 2. Existe correlação clara entre distância percorrida e valor da corrida? Qual a força dessa relação?
 3. Quais são os horários do dia e dias da semana com maior volume de corridas e maior valor médio?
@@ -54,7 +54,7 @@ Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilid
 
 ## 3. Modelagem e Catálogo de Dados (Etapa 4.3)
 
-Foi utilizada a **Arquitetura Medalhão**:
+Foi utilizada a **Arquitetura Medalhão**, conforme sugerido no projeto:
 
 - **Bronze:** dado bruto + metadados de linhagem  
 - **Silver:** dado limpo + colunas derivadas  
@@ -106,7 +106,7 @@ Dados limpos + colunas derivadas.
 
 ## 4. Pipeline de Dados (Etapa 4.4)
 
-O pipeline foi construído em um único notebook, organizado em seções claras:
+O pipeline foi construído em um único notebook, organizado nestas seções:
 
 1. Exploração da fonte  
 2. Criação dos schemas (bronze, silver, gold)  
@@ -189,14 +189,17 @@ Correlação de **0,9473** → relação muito forte e positiva.
 - Dia mais forte: **Sexta-feira**
 - Dia mais fraco: **Terça-feira**
 
-![Top horários](ds_nt_taxi/o17_primeira_resposta_tabular_a_questao_3.png)  
+![Top horários](ds_nt_taxi/o17_primeira_resposta_tabular_a_questao_3.png)
+
 ![Dias da semana](ds_nt_taxi/o16_segunda_resposta_tabular_a_questao_3.png)
+
 ![Em gráficos](ds_nt_taxi/o18_resposta_a_questao_3_grafico_de_barras.png)
 
 ### Pergunta 4 – Rotas mais frequentes e rentáveis
 As rotas mais comuns são curtas e intra-bairros de Manhattan (especialmente Upper East Side e Upper West Side).
 
-![Top rotas por volume](ds_nt_taxi/o19_primeira_resposta_a_questao_4.png)  
+![Top rotas por volume](ds_nt_taxi/o19_primeira_resposta_a_questao_4.png)
+
 ![Top rotas por receita](ds_nt_taxi/o20_segunda_resposta_a_questao_4.png)
 
 ### Pergunta 5 – Duração média
@@ -212,4 +215,4 @@ O pipeline revelou um padrão claro de uso urbano em Manhattan: corridas curtas,
 ## 7. Autoavaliação
 
 - Consegui responder todas as perguntas formuladas inicialmente.
-- Deixei passar desapercebido: se tivesse um limite mais claro, seria possível filtrar o outlier extremo de duração (1438 minutos).
+- Sobre os 1438 minutos, quase 24 horas), deixei passar desapercebido: se tivesse um limite de teto mais claro, seria possível filtrar o outlier extremo de duração.

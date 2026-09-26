@@ -165,7 +165,9 @@ samples.nyctaxi.trips
 ### Pergunta 1 – Distribuição e Outliers
 A distribuição é assimétrica à direita. A maioria das corridas é curta e de baixo valor, enquanto poucos outliers elevam a média.
 
-![Resultado Pergunta 1](images/12_pergunta1_stats.png)
+![Resultado Pergunta 1](ds_nt_taxi/o13e1_resposta_tabular_a_questao_1.png)
+
+![Formando o histograma](ds_nt_taxi/o13_resposta_a_questao_1_histograma.png)
 
 ### Pergunta 2 – Correlação Distância × Valor
 Correlação de **0,9473** → relação muito forte e positiva.

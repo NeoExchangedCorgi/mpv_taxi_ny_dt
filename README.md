@@ -70,7 +70,7 @@ Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilid
 
 **Evidências:**
 
-![Estrutura da tabela fonte](ds_nt_taxi/o1_explorando_o_ds_estrutura_da_tabela.png)
+![Estrutura da tabela fonte](images/o1_explorando_o_ds_estrutura_da_tabela.png)
 
 ![Contagem da tabela fonte](images/02_fonte_count.png)
 
@@ -85,6 +85,160 @@ Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilid
 ![Amostra da Bronze com metadados](images/04_bronze_sample.png)
 
 ---
+
+## 3. Modelagem e Catálogo de Dados (Etapa 4.3)
+
+Foi utilizada a **Arquitetura Medalhão**:
+
+- **Bronze:** dado bruto + metadados de linhagem  
+- **Silver:** dado limpo + colunas derivadas  
+- **Gold:** tabelas agregadas prontas para consumo
+
+### Catálogo de Dados
+
+#### Tabela de origem: `samples.nyctaxi.trips`
+
+| Coluna | Tipo | Significado |
+|--------|------|-----------|
+| tpep_pickup_datetime | timestamp | Momento em que o passageiro entrou no táxi |
+| tpep_dropoff_datetime | timestamp | Momento em que o passageiro saiu do táxi |
+| trip_distance | double | Distância percorrida em milhas |
+| fare_amount | double | Valor da tarifa base em dólares |
+| pickup_zip | int | CEP de embarque |
+| dropoff_zip | int | CEP de desembarque |
+
+#### Camada Bronze: `workspace.bronze.nyctaxi_trips`
+Cópia bruta + metadados de rastreabilidade.
+
+| Coluna | Tipo | Significado |
+|--------|------|-----------|
+| ... (mesmas colunas da origem) | | |
+| ingestion_timestamp | timestamp | Data/hora em que o dado foi ingerido |
+| source_table | string | Tabela de origem |
+
+#### Camada Silver: `workspace.silver.nyctaxi_trips`
+Dados limpos + colunas derivadas.
+
+| Coluna | Tipo | Significado |
+|--------|------|-----------|
+| duration_minutes | decimal | Duração da corrida em minutos |
+| pickup_hour | int | Hora do dia (0-23) |
+| pickup_dayofweek | int | Dia da semana (1=Domingo ... 7=Sábado) |
+
+#### Camada Gold
+- `workspace.gold.trips_by_hour`
+- `workspace.gold.trips_by_dayofweek`
+- `workspace.gold.top_routes`
+
+**Evidências do Catálogo / Estrutura:**
+
+![Estrutura Silver](images/05_silver_describe.png)
+
+![Estrutura Gold - trips_by_hour](images/06_gold_hour.png)
+
+---
+
+## 4. Pipeline de Dados (Etapa 4.4)
+
+O pipeline foi construído em um único notebook, organizado em seções claras:
+
+1. Exploração da fonte  
+2. Criação dos schemas (bronze, silver, gold)  
+3. Carga Bronze  
+4. Análise de Qualidade  
+5. Transformação Silver  
+6. Criação das tabelas Gold  
+7. Respostas às perguntas de negócio  
+
+**Fluxo:**
+
+samples.nyctaxi.trips
+→ workspace.bronze.nyctaxi_trips
+→ workspace.silver.nyctaxi_trips
+→ workspace.gold.trips_by_hour
+→ workspace.gold.trips_by_dayofweek
+→ workspace.gold.top_routes
+
+
+**Evidências:**
+
+![Contagem Silver](images/07_silver_count.png)
+
+![Tabelas Gold criadas](images/08_gold_tables.png)
+
+---
+
+## 5. Qualidade de Dados (Etapa 4.5)
+
+### Problemas encontrados na Bronze:
+- 76 registros com distância ≤ 0  
+- 10 registros com valor ≤ 0 (incluindo valores negativos)  
+- 1 registro com duração inválida (dropoff ≤ pickup)  
+- Nenhum valor nulo  
+- Sem outliers extremos de distância ou valor  
+
+### Tratamentos aplicados na Silver:
+- Remoção dos 85 registros inválidos (taxa de rejeição ≈ 0,39%)  
+- Criação das colunas derivadas (`duration_minutes`, `pickup_hour`, `pickup_dayofweek`)
+
+**Evidências:**
+
+![Verificação de nulos](images/09_qualidade_nulos.png)
+
+![Outliers e valores inválidos](images/10_qualidade_outliers.png)
+
+![Estatísticas básicas](images/11_qualidade_stats.png)
+
+---
+
+## 6. Análise de Dados (Etapa 4.5)
+
+### Pergunta 1 – Distribuição e Outliers
+A distribuição é assimétrica à direita. A maioria das corridas é curta e de baixo valor, enquanto poucos outliers elevam a média.
+
+![Resultado Pergunta 1](images/12_pergunta1_stats.png)
+
+### Pergunta 2 – Correlação Distância × Valor
+Correlação de **0,9473** → relação muito forte e positiva.
+
+![Correlação](images/13_pergunta2_correlacao.png)
+
+### Pergunta 3 – Horários e Dias de Pico
+- Pico de demanda: **18h–19h**
+- Dia mais forte: **Sexta-feira**
+- Dia mais fraco: **Terça-feira**
+
+![Top horários](images/14_pergunta3_horarios.png)  
+![Dias da semana](images/15_pergunta3_dias.png)
+
+### Pergunta 4 – Rotas mais frequentes e rentáveis
+As rotas mais comuns são curtas e intra-bairros de Manhattan (especialmente Upper East Side e Upper West Side).
+
+![Top rotas por volume](images/16_pergunta4_volume.png)  
+![Top rotas por receita](images/17_pergunta4_receita.png)
+
+### Pergunta 5 – Duração média
+Duração média ≈ **15,16 minutos**. Correlação com o valor é fraca (0,17), confirmando que a distância é o fator dominante.
+
+![Resultado Pergunta 5](images/18_pergunta5_duracao.png)
+
+### Discussão Geral
+O pipeline revelou um padrão claro de uso urbano em Manhattan: corridas curtas, alta correlação distância-preço, picos no final da tarde e às sextas-feiras. A qualidade dos dados era boa, exigindo apenas limpeza leve.
+
+---
+
+## 7. Autoavaliação
+
+- Consegui responder todas as perguntas formuladas inicialmente.
+- Deixar passar desapercebido: se tivesse um limite mais claro, seria possível filtrar o outlier extremo de duração (1438 minutos).
+
+---
+
+## Estrutura do Repositório
+
+- `notebook/` → Notebook completo do pipeline
+- `images/` → Todas as evidências (screenshots)
+- `README.md` → Esta documentação
 
 
 

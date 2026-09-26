@@ -1,6 +1,8 @@
 # Aluno:
-
 Gusthavo Silva de Oliveira (Matrícula: 4052026000142)
+
+### Nota Importante Minha
+Consegui executar o trabalho com o auxílio da IA do próprio Notebook, que avaliava meus erros de sintaxe e ajudava na lógica (e mesmo assim não saímos ilesos, conforme se poderá ver na seção das perguntas). Isso é tudo, obrigado.
 
 # MVP: Pipeline de Dados na Nuvem – NYC Taxi (Databricks)
 

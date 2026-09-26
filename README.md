@@ -1,3 +1,160 @@
+# MVP: Pipeline de Dados na Nuvem – NYC Taxi (Databricks)
+
+Pipeline de dados completo utilizando a **Arquitetura Medalhão** (Bronze → Silver → Gold) sobre o dataset público `samples.nyctaxi.trips` no Databricks Free Edition.
+
+---
+
+## 1. Contexto de Negócios e Perguntas (Etapa 2 e 4.1)
+
+### Problema / Contexto
+O objetivo deste trabalho é construir um pipeline de dados na nuvem para analisar o padrão de uso e precificação das corridas de táxi em Nova York.  
+A partir dos dados disponíveis no dataset `samples.nyctaxi.trips`, buscamos identificar os principais fatores que influenciam o valor da corrida, os horários e locais de maior demanda, e possíveis problemas de qualidade nos dados.  
+
+Os insights gerados podem apoiar decisões de otimização de frota, precificação dinâmica ou planejamento urbano.
+
+### Fonte dos Dados
+- **Dataset:** `samples.nyctaxi.trips` (Databricks Public Datasets)
+- **Licença:** Uso livre para fins educacionais e de aprendizado
+- **Conteúdo:** Registros de corridas de táxi amarelo (Yellow Cab) de Nova York, contendo data/hora de embarque e desembarque, distância, valor da corrida e CEPs de origem/destino.
+- **Volume:** 21.932 registros | 6 colunas originais
+
+### Perguntas de Negócio
+1. Qual é a distribuição do valor da corrida e da distância? Existem outliers significativos?
+2. Existe correlação clara entre distância percorrida e valor da corrida? Qual a força dessa relação?
+3. Quais são os horários do dia e dias da semana com maior volume de corridas e maior valor médio?
+4. Quais são os CEPs de origem e destino mais frequentes? Existem rotas especialmente rentáveis?
+5. Qual a duração média das corridas e como ela se relaciona com o valor cobrado?
+
+---
+
+## 2. Carga dos Dados (Etapa 4.2)
+
+Os dados já estavam disponíveis no catálogo `samples` do Databricks.  
+Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilidade (`ingestion_timestamp` e `source_table`).
+
+**Evidências:**
+
+![Estrutura da tabela fonte](# MVP: Pipeline de Dados na Nuvem – NYC Taxi (Databricks)
+
+Pipeline de dados completo utilizando a **Arquitetura Medalhão** (Bronze → Silver → Gold) sobre o dataset público `samples.nyctaxi.trips` no Databricks Free Edition.
+
+---
+
+## 1. Contexto de Negócios e Perguntas (Etapa 2 e 4.1)
+
+### Problema / Contexto
+O objetivo deste trabalho é construir um pipeline de dados na nuvem para analisar o padrão de uso e precificação das corridas de táxi em Nova York.  
+A partir dos dados disponíveis no dataset `samples.nyctaxi.trips`, buscamos identificar os principais fatores que influenciam o valor da corrida, os horários e locais de maior demanda, e possíveis problemas de qualidade nos dados.  
+
+Os insights gerados podem apoiar decisões de otimização de frota, precificação dinâmica ou planejamento urbano.
+
+### Fonte dos Dados
+- **Dataset:** `samples.nyctaxi.trips` (Databricks Public Datasets)
+- **Licença:** Uso livre para fins educacionais e de aprendizado
+- **Conteúdo:** Registros de corridas de táxi amarelo (Yellow Cab) de Nova York, contendo data/hora de embarque e desembarque, distância, valor da corrida e CEPs de origem/destino.
+- **Volume:** 21.932 registros | 6 colunas originais
+
+### Perguntas de Negócio
+1. Qual é a distribuição do valor da corrida e da distância? Existem outliers significativos?
+2. Existe correlação clara entre distância percorrida e valor da corrida? Qual a força dessa relação?
+3. Quais são os horários do dia e dias da semana com maior volume de corridas e maior valor médio?
+4. Quais são os CEPs de origem e destino mais frequentes? Existem rotas especialmente rentáveis?
+5. Qual a duração média das corridas e como ela se relaciona com o valor cobrado?
+
+---
+
+## 2. Carga dos Dados (Etapa 4.2)
+
+Os dados já estavam disponíveis no catálogo `samples` do Databricks.  
+Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilidade (`ingestion_timestamp` e `source_table`).
+
+**Evidências:**
+
+![Estrutura da tabela fonte](ds_nt_taxi/o1_explorando_o_ds_estrutura_da_tabela.png)
+
+![Contagem da tabela fonte](images/02_fonte_count.png)
+
+![Criação e verificação da Bronze](images/03_bronze_describe.png)
+
+![Amostra da Bronze com metadados](images/04_bronze_sample.png)
+
+![Contagem da tabela fonte](images/02_fonte_count.png)
+
+![Criação e verificação da Bronze](images/03_bronze_describe.png)
+
+![Amostra da Bronze com metadados](images/04_bronze_sample.png)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # mpv_taxi_ny_dt
 Estudo de banco de **dados** de taxis em Nova Iorque
 

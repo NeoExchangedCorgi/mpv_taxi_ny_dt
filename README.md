@@ -120,7 +120,7 @@ samples.nyctaxi.trips
 
 **Evidências:**
 
-![Contagem Silver](images/07_silver_count.png)
+![Contagem Silver](ds_nt_taxi/o9_tabela_silver_resgistros_restantes.png)
 
 ![Tabelas Gold criadas](images/08_gold_tables.png)
 

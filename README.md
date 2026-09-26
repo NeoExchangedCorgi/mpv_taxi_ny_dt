@@ -172,6 +172,8 @@ Correlação de **0,9473** → relação muito forte e positiva.
 
 ![Correlação](images/13_pergunta2_correlacao.png)
 
+![Correlação em visual](images/13_pergunta2_correlacao.png)
+
 ### Pergunta 3 – Horários e Dias de Pico
 - Pico de demanda: **18h–19h**
 - Dia mais forte: **Sexta-feira**

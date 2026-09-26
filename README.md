@@ -154,7 +154,7 @@ samples.nyctaxi.trips
 
 ![Outliers de duração zero ou negativa](images/10_qualidade_outliers.png)
 
-![Outliers de valores 0 ou negativos](images/10_qualidade_outliers.png)
+![Outliers de valores 0 ou negativos](ds_nt_taxi/o6_tabela_bronze_valores_sus_valor_0_menos.png)
 
 ![Estatísticas básicas](ds_nt_taxi/o4e1_tabela_bronze_aqd_estatisticas.png)
 

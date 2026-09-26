@@ -150,7 +150,7 @@ samples.nyctaxi.trips
 
 ![Verificação de nulos](ds_nt_taxi/o4_tabela_bronze_aqd_valores_nulos.png)
 
-![Outliers de distâncias zero ou negativas](images/10_qualidade_outliers.png)
+![Outliers de distâncias zero ou negativas](ds_nt_taxi/o5_tabela_bronze_valores_sus_distancia_0_menos.png)
 
 ![Outliers de duração zero ou negativa](images/10_qualidade_outliers.png)
 

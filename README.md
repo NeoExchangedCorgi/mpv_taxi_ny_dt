@@ -42,7 +42,7 @@ Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilid
 
 ![Amostra da Bronze com metadados](images/04_bronze_sample.png)
 
-![Contagem da tabela fonte](images/02_fonte_count.png)
+![Contagem da tabela fonte](ds_nt_taxi/o1e1_amostra_da_fonte.png)
 
 ![Criação e verificação da Bronze](images/03_bronze_describe.png)
 

@@ -34,7 +34,7 @@ Foi realizada a carga para a camada Bronze adicionando metadados de rastreabilid
 
 **Evidências:**
 
-![Estrutura da tabela fonte](ds_nt_taxi/o1_explorando_o_ds_estrutura_da_tabela.png)
+![Estrutura da tabela fonte](ds_nt_taxi/o1_explorando_o_ds_estrutura_da_tabela__da_fonte.png)
 
 ![Contagem da tabela fonte](images/02_fonte_count.png)
 

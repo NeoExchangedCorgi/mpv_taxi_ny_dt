@@ -111,10 +111,15 @@ O pipeline foi construído em um único notebook, organizado em seções claras:
 **Fluxo:**
 
 samples.nyctaxi.trips
+
 → workspace.bronze.nyctaxi_trips
+
 → workspace.silver.nyctaxi_trips
+
 → workspace.gold.trips_by_hour
+
 → workspace.gold.trips_by_dayofweek
+
 → workspace.gold.top_routes
 
 
@@ -122,7 +127,9 @@ samples.nyctaxi.trips
 
 ![Contagem Silver](ds_nt_taxi/o9_tabela_silver_resgistros_restantes.png)
 
-![Tabelas Gold criadas](images/08_gold_tables.png)
+![Tabela Gold para dias da semana](ds_nt_taxi/o11_tabela_gold_viagens_por_dia_de_semana.png)
+
+![Tabelas Gold para rotas](ds_nt_taxi/o12_tabela_gold_top_rotas.png)
 
 ---
 

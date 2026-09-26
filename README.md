@@ -92,7 +92,7 @@ Dados limpos + colunas derivadas.
 
 ![Estrutura Silver](ds_nt_taxi/o8_tabela_silver_estrutura_tabelas.png)
 
-![Estrutura Gold - trips_by_hour](images/06_gold_hour.png)
+![Estrutura Gold - trips_by_hour](ds_nt_taxi/o10_tabela_gold_viagens_por_hora.png)
 
 ---
 

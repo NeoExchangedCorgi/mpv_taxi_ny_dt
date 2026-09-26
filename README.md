@@ -186,13 +186,13 @@ Correlação de **0,9473** → relação muito forte e positiva.
 ### Pergunta 4 – Rotas mais frequentes e rentáveis
 As rotas mais comuns são curtas e intra-bairros de Manhattan (especialmente Upper East Side e Upper West Side).
 
-![Top rotas por volume](images/16_pergunta4_volume.png)  
-![Top rotas por receita](images/17_pergunta4_receita.png)
+![Top rotas por volume](ds_nt_taxi/o19_primeira_resposta_a_questao_4.png)  
+![Top rotas por receita](ds_nt_taxi/o20_segunda_resposta_a_questao_4.png)
 
 ### Pergunta 5 – Duração média
 Duração média ≈ **15,16 minutos**. Correlação com o valor é fraca (0,17), confirmando que a distância é o fator dominante.
 
-![Resultado Pergunta 5](images/18_pergunta5_duracao.png)
+![Resultado Pergunta 5](ds_nt_taxi/o21_resposta_a_questao_5.png)
 
 ### Discussão Geral
 O pipeline revelou um padrão claro de uso urbano em Manhattan: corridas curtas, alta correlação distância-preço, picos no final da tarde e às sextas-feiras. A qualidade dos dados era boa, exigindo apenas limpeza leve.

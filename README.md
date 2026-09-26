@@ -179,7 +179,7 @@ Correlação de **0,9473** → relação muito forte e positiva.
 - Dia mais forte: **Sexta-feira**
 - Dia mais fraco: **Terça-feira**
 
-![Top horários](images/14_pergunta3_horarios.png)  
+![Top horários](ds_nt_taxi/o17_primeira_resposta_tabular_a_questao_3.png)  
 ![Dias da semana](images/15_pergunta3_dias.png)
 
 ### Pergunta 4 – Rotas mais frequentes e rentáveis

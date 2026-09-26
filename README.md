@@ -170,7 +170,7 @@ A distribuição é assimétrica à direita. A maioria das corridas é curta e d
 ### Pergunta 2 – Correlação Distância × Valor
 Correlação de **0,9473** → relação muito forte e positiva.
 
-![Correlação](images/13_pergunta2_correlacao.png)
+![Correlação](ds_nt_taxi/o15_resposta_tabular_a_questao_2.png)
 
 ![Correlação em visual](ds_nt_taxi/o14_resposta_a_questao_2_scatter_plot.png)
 
